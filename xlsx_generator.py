@@ -2,9 +2,10 @@ import pandas as pd
 
 cost_centres = ["SAFROPS", "SAFROP2", "SAFROP3", "SAFROP4", "SAFROP5", "SAFROP6", "SAFROP7", "SAHSSHU", "SASSADM"]
 
-def xlsx_gen(df):
+def xlsx_gen(df, output_path, output_filename):
     """Generates an Excel file with sheets corresponding to cost centres."""
-    with pd.ExcelWriter('output.xlsx', engine='xlsxwriter') as writer:
+    complete_path = f"{output_path}/{output_filename}.xlsx"
+    with pd.ExcelWriter(complete_path, engine='xlsxwriter') as writer:
 
         orange_format = writer.book.add_format({'bg_color': '#FFC000', 'bold': True, 'border': 1})
         bold_format = writer.book.add_format({'bold': True})
