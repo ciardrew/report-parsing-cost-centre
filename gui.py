@@ -128,7 +128,7 @@ class WageReportGUI:
 
         help_text = tk.Text(help_window, wrap="word", yscrollcommand=scrollbar.set)
 
-        input_text = """tshjgfbsftn"""
+        input_text = """You must select a .xlsx file to parse and an output directory to save the report.\n \nDon't try to generate a file that you currently have open in Excel."""
         help_text.insert(tk.END, input_text)
         help_text.pack(side="left", fill="both", expand=True)
         scrollbar.config(command=help_text.yview)
